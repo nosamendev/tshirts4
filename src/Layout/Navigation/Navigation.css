@@ -1,0 +1,80 @@
+header nav {
+	height: 47px;
+	background-color: #000;	
+}
+
+header nav > div {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+header ul {
+	margin: 0 20px 0 0;
+	padding: 0;
+	list-style-type: none;	
+}
+
+header ul li {
+	display: inline-block;	
+}
+
+header nav a {
+	display: inline-block;
+	color: #fbb700;
+	text-decoration: none;
+	line-height: 47px;
+	padding: 0 10px;	
+}
+
+header nav a:hover {
+	color: #fb5e00;	
+}
+
+header nav a.active {
+	color: #fb5e00;	
+}
+
+header nav .cart a {
+	display: inline-block;
+	width: 26px;
+	height: 22px;
+	background: url(../../images/cart.svg) 0 0 no-repeat;
+	line-height: normal;
+	position: relative;
+	top: 5px;
+	right: 5px;
+}
+
+header nav .cart a.active {
+	background-position: 0 -23px;
+}
+
+header nav .cart span {
+	display: inline-block;
+	font-size: 70%;
+	color: #fbb700;
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	right: -17px;
+	bottom: 0;
+	text-align: center;
+	line-height: 0.7;
+}
+
+header nav .cart a.active span {
+	color: #fb5e00;
+}
+
+header nav .cart {
+	margin-left: 20px;
+}
+
+header nav .user-email {
+	display: inline-block;
+	margin-right:20px;
+	font-size: 80%;
+	color: #808080;
+}

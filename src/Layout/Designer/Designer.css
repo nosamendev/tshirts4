@@ -1,0 +1,261 @@
+#tshirt-container {
+	width: 40%;	
+}
+
+#designer-options {
+	width: 55%;
+	text-align: left;
+}
+
+#designer-options form{
+	text-align: left;
+}
+
+#tshirt-container .tshirt {
+	border: 1px solid #e3e3e3	
+}
+
+#tshirt-container .tshirt .tshirt{
+	border: none;	
+}
+
+#tshirt-container .tshirt {
+	height: 385px;
+	background-color: #fff;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	background-size: contain;
+	border: 1px dotted #ccc;
+	position: relative;
+	z-index: 1;	
+}
+
+#designer-options {
+	text-align: left;
+}
+
+#designer-options .tabs span {
+	display: inline-block;
+	padding: 5px 20px;
+	color :#000;
+	text-decoration: none;
+	margin-right: 3px;
+	border-radius: 5px 5px 0 0;
+	transition: background-color 0.3s;
+	cursor: pointer;
+}
+
+#designer-options .tabs span.active {
+	background-color: #f3f3f3;
+	cursor: default;
+}
+
+#designer-options .tabs span.active:hover {
+	color: #000;
+}
+
+#designer-options .tabs:after {
+	content: "";
+	display: block;
+	clear: both;	
+}
+
+#designer-options .tabs span:hover,
+#designer-options .tabs span:active {
+	background-color: #f3f3f3;	
+}
+
+.options {
+	background-color: #f3f3f3;
+	padding: 10px 20px;
+	border-radius: 0 5px 5px 5px;
+}
+
+.options select{
+	border: 1px solid #e0e0e0;
+	background-color: #fff;
+	padding: 5px 25px 5px 5px;
+	background: #fff url(../../images/arrow.png) right center no-repeat;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	
+}
+/* For IE10 */
+.options select::-ms-expand {
+  display: none;
+}
+
+.options label {
+	display: inline-block;
+	margin: 10px 20px 10px 0;	
+}
+
+.options label span {
+	display: inline-block;
+	margin-right: 10px;	
+}
+
+.options .colors {
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 10px;
+}
+
+.options .colors a,
+.options .colors span {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 2px;
+	cursor: pointer;
+}
+
+.options .colors a:hover, 
+.options .colors span:hover {
+	border: 1px dotted #000;	
+	
+}
+
+.options .colors a.active, 
+.options .colors span.active{
+	border:1px solid #000;	
+}
+
+.options .colors .white {
+	background-color: white;	
+}
+
+.options .colors .firebrick {
+	background-color: firebrick;	
+}
+
+.options .colors .gold {
+	background-color:gold;	
+}
+
+.options .colors .lightblue {
+	background-color: lightblue;	
+}
+.options .colors .grey {
+	background-color: grey;	
+}
+
+.options .colors .maroon {
+	background-color: maroon;	
+}
+
+.options .colors .palevioletred {
+	background-color: palevioletred;	
+}
+
+.options .colors .seagreen {
+	background-color: seagreen;	
+}
+
+.options .colors .darkred {
+	background-color: darkred;	
+}
+
+.options .colors .green {
+	background-color: green;	
+}
+
+.options .colors .indigo {
+	background-color: indigo;	
+}
+
+.options .colors .pink {
+	background-color:pink;	
+}
+
+.options .colors .red {
+	background-color:red;	
+}
+
+.options button {
+	margin: 10px 0 20px 0;
+}
+
+.tshirt.men.white {
+	background-image: url(../../images/men_white.png)
+}
+
+.tshirt.men.firebrick {
+	background-image: url(../../images/men_firebrick.png)
+}
+
+.tshirt.men.seagreen {
+	background-image: url(../../images/men_seagreen.png)
+}
+
+.tshirt.men.gold {
+	background-image: url(../../images/men_gold.png)
+}
+
+.tshirt.men.grey {
+	background-image: url(../../images/men_grey.png)
+}
+
+.tshirt.men.lightblue {
+	background-image: url(../../images/men_lightblue.png)
+}
+
+.tshirt.men.maroon {
+	background-image: url(../../images/men_maroon.png)
+}
+.tshirt.men.palevioletred {
+	background-image: url(../../images/men_palevioletred.png)
+}
+
+.tshirt.women.white {
+	background-image: url(../../images/women_white.png)
+}
+
+.tshirt.women.red {
+	background-image: url(../../images/women_red.png)
+}
+
+.tshirt.women.grey {
+	background-image: url(../../images/women_grey.png)
+}
+
+.tshirt.women.darkred {
+	background-image: url(../../images/women_darkred.png)
+}
+
+.tshirt.women.green{
+	background-image: url(../../images/women_green.png)
+}
+.tshirt.women.indigo {
+	background-image: url(../../images/women_indigo.png)
+}
+
+.tshirt.women.lightblue {
+	background-image: url(../../images/women_lightblue.png)
+}
+
+.tshirt.women.pink {
+	background-image: url(../../images/women_pink.png)
+}
+
+@media all and (max-width: 400px) {
+	#tshirt-container {
+    	width: 100%;
+	}
+
+	#designer-options {
+		width: 100%;
+		margin-top: 30px;
+	}
+}
+
+@media all and (min-width: 401px) {
+	#tshirt-container {
+		width: 40%;
+	}
+
+	#designer-options {
+		width: 55%;
+		text-align: left;
+	}
+}

@@ -1,0 +1,27 @@
+.order-overview table {
+    width:100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.order-overview table tr td:first-child{
+    width:30%
+}
+
+.order-overview td {
+    padding: 5px 10px;
+    text-align: left;
+}
+
+.order-overview th {
+    border-bottom: 1px dotted #aaa;
+    text-align: left;
+    padding: 5px 10px;
+}
+
+.order-overview .price {
+    border-top: 1px dotted #c3c3c3;
+    border-bottom: 1px dotted #c3c3c3;
+}
+

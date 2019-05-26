@@ -1,0 +1,15 @@
+.order-item {
+    background-color: #fefeeb;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.order-item .order-info #tshirt-container .tshirt {
+    height: 160px;
+}
+
+.order-item .order-overview th,
+.order-item .order-overview td {
+    padding: 2px;
+
+}

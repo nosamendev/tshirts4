@@ -1,0 +1,157 @@
+main > div > form {
+    text-align: center;
+}
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.order-info #tshirt-container {
+    width:30%;
+}
+
+.order-info .order-overview {
+    width:65%;
+}
+
+.order-info #tshirt-container .tshirt{
+    height: 195px;
+}
+
+.order-info .options {
+    width: 55%;
+}
+
+.order-info label span {
+    width: 120px;
+}
+
+.order-info button {
+    margin-left:130px;
+}
+
+.cart-item  {
+    text-align: right;
+    background-color: #e2eff8;
+    padding: 25px 20px 20px 20px;;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.remove {
+    -webkit-animation: shrink 0.5s 1;
+    animation: shrink 0.5s 1;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+
+@-webkit-keyframes shrink {
+    from {height: auto; opacity: 1}
+    to {height: 0px; opacity: 0}
+}
+  
+@keyframes shrink {
+    from {height: auto; opacity: 0}
+    to {height: 0px; opacity: 1}
+}
+
+.remove .order-info{
+    position: relative;
+    -webkit-animation: moveup 0.3s 1;
+    animation: moveup 0.3s 1;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes moveup {
+    from {top: 0; opacity: 1}
+    to {top: -100%; opacity: 0}
+}
+  
+@keyframes moveup {
+    from {top: 0; opacity: 1}
+    to {top: -100%; opacity: 0}
+}
+
+.total {
+    padding: 10px 20px;
+    display: flex;
+}
+
+.total span {
+    display: inline-block;
+    width: 50%;
+}
+
+.total span:nth-child(2) {
+    text-align: right;
+}
+
+.cart-item + .total {
+    margin-top:-30px;
+    border-bottom: 1px dotted #aaa;
+}
+
+.order-form {
+	background-color: #f3f3f3;
+	padding: 10px 20px;
+	border-radius: 0 5px 5px 5px;
+}
+
+.order-form select{
+	border: 1px solid #e0e0e0;
+	background-color: #fff;
+	padding: 5px 25px 5px 5px;
+	background: #fff url(../../images/arrow.png) right center no-repeat;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	
+}
+/* For IE10 */
+.order-form select::-ms-expand {
+  display: none;
+}
+
+.order-form label {
+	display: block;
+	margin: 10px 20px 10px 0;	
+}
+
+.order-form label span {
+	display: inline-block;
+	margin-right: 10px;	
+    text-align: left;
+}
+
+.order-form button {
+	margin: 20px 0;
+}
+
+.order-form input:focus {
+	border-color: #aaa;
+}
+
+.order-form form {
+    text-align: center;
+}
+
+@media all and (max-width: 700px) {
+	.order-form label span {
+		width: 40%;
+    }
+    
+	.order-form input {
+		width: 55%;
+	}
+}
+
+@media all and (min-width: 701px) {
+	.order-form label span {
+		width: 20%;
+    }
+    
+	.order-form input {
+		width: 30%;
+	}
+}

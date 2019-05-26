@@ -1,0 +1,40 @@
+header {
+	background: url(../../images/header_bg.jpg) center 47px no-repeat;
+	height:216px;
+	border-bottom:2px solid #fff;
+	position:relative;
+	background-color:#fff;	
+}
+
+header:after {
+	content: "";
+	display: block;
+	height:26px;
+	width: 100%;
+	background-color:#e3e3e3;
+	position: absolute;	
+	bottom: -28px;
+}
+
+header #logo-container {
+	max-width: 1100px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+header #logo{
+	height: 147px;
+	position: relative;
+	bottom:-26px;
+	bottom: -49px;
+	left:0;
+}
+
+header #logo a {
+	display: inline-block;
+	width: 300px;
+	height: 147px;
+	background: url(../../images/logo.png) 0 0 no-repeat;
+	position: absolute;
+	z-index: 2;
+}

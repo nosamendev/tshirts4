@@ -1,0 +1,120 @@
+main {
+	max-width: 1100px;
+	margin: 50px auto;
+	padding: 0 20px;
+	background-color: #fff;
+}
+
+button, .button {
+	background-color :#075d9d;
+	border: 0;
+	color: #fff;
+	padding: 5px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+button:hover,
+.button:hover {
+	background-color :#147ac9
+}
+
+.second-level-button {
+	background-color :#fff;
+	border: 2px solid #075d9d;
+	color: #075d9d;
+	padding: 3px 20px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	cursor: pointer;
+	margin: 0 20px;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+.second-level-button:hover {
+	border-color: #2a8ad3;
+	background-color :#fff;
+}
+
+.close-button {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url(../images/close.svg) center no-repeat;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+	cursor: pointer;
+}
+
+.remove-button {
+	width: 32px;
+  height: 32px;
+  display: inline-block;
+  background: url(../images/trash.svg) center no-repeat;  
+	cursor: pointer;
+	border-radius: 5px;
+	vertical-align: middle;
+	margin-left: 20px;
+}
+
+h1 {
+	padding: 0;
+	margin: 20px 0;
+	font-size: 160%	
+}
+
+h2 {
+	padding: 0 0 10px 0;
+	margin: 0;
+	font-size: 130%;
+	border-bottom: 1px dotted #aaa;
+}
+
+select {
+	border: 1px solid #e0e0e0;
+	background-color: #fff;
+	padding: 5px 25px 5px 5px;
+	background: #fff url(../images/arrow.png) right center no-repeat;
+	-moz-appearance: none;
+	-webkit-appearance: none;	
+}
+
+/* For IE10 */
+select::-ms-expand {
+  display: none;
+}
+
+input {
+	border: 1px solid #e0e0e0;
+	background-color: #fff;
+	padding: 5px 25px 5px 5px;
+	background-color: #fff;
+	
+}
+
+label span {
+	display: inline-block;
+	margin-right: 10px;	
+}
+
+.info {
+	text-align: center;
+}
+
+@media all and (max-width: 400px) {
+	main #designer-container {
+		display: block
+	}
+}
+
+@media all and (min-width: 401px) {
+	main #designer-container {
+		display: flex;
+		justify-content: space-between;
+	}
+}

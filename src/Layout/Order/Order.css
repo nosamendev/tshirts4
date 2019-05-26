@@ -1,0 +1,21 @@
+.order-info {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.order-info #tshirt-container .tshirt {
+    height: 150px;
+}
+
+.order-info .options {
+    width: 55%
+}
+
+.order-info label span {
+    width: 120px;
+}
+
+.order-info button {
+    margin-left:130px;
+}
