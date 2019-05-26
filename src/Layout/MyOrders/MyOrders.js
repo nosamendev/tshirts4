@@ -8,14 +8,16 @@ class MyOrders extends React.Component{
 
     componentDidMount(){
         this.props.fetchOrders(localStorage.token, localStorage.userId);
+        
     }
 
     componentWillUnmount(){
         this.removeMyOrdersFromDOM();
     }
 
-   
-
+    componentDidUpdate(){
+        this.renderMyOrders();
+    }
 
     removeMyOrdersFromDOM() {
         const main = document.querySelector("#main");
@@ -136,10 +138,6 @@ class MyOrders extends React.Component{
             
             const orders = Object.values(this.props.orders);
 
-            if(!orders[0]) {
-                return (<p>You have no orders saved yet.</p>);
-            };
-
             for (let i = 0; i < orders.length; i++){
                 this.displayOrder(orders[i].tshirts);
             } 
@@ -148,11 +146,18 @@ class MyOrders extends React.Component{
     }  
 
     render(){
+        let contents = <Loader />
+        if ( !this.props.loading && this.props.orders) {
+             contents = null;
+             if (Object.values(this.props.orders).length === 0){
+                contents = (<p>You have no orders yet.</p>);
+             }
+        }
         
         return (
             <React.Fragment>
-                <h2>My orders</h2>                
-                {this.renderMyOrders()}                
+                <h2>My orders</h2>   
+                {contents}                        
             </React.Fragment>
 
         )
