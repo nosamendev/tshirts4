@@ -100,14 +100,13 @@ export const cartTotalPrice = (price) => {
 export const saveOrder = (order, token) => async dispatch => {
     dispatch({type: SAVE_ORDER_START});//!!!sets loading = true
     
-    const response = await tshirts.post('/orders.json?auth=' + token, order)
-        .then(response => {
-            dispatch({type: SAVE_ORDER, payload: response.data})
-        })
-        .catch (error => {
-            dispatch({type: SAVE_ORDER_FAILED, payload: error})
-        });
-
+    try {
+        const response = await tshirts.post('/orders.json?auth=' + token, order);
+        dispatch({type: SAVE_ORDER, payload: response.data});
+    }
+    catch(error) {
+        dispatch({type: SAVE_ORDER_FAILED, payload: error})
+    }
 } 
 
 export const saveOrderFailed = (error) => {
@@ -120,14 +119,13 @@ export const saveOrderFailed = (error) => {
 export const fetchTshirts = () => async dispatch => {
     dispatch({type: FETCH_TSHIRTS_START});//!!!sets loading = true
 
-    const response = await tshirts.get('/store.json')
-        .then(response => {
-            dispatch({type: FETCH_TSHIRTS, payload: response.data})
-        })
-        .catch(error => {
-            dispatch({type: FETCH_TSHIRTS_FAILED, payload: error})
-        });
-
+    try {
+        const response = await tshirts.get('/store.json');
+        dispatch({type: FETCH_TSHIRTS, payload: response.data})
+    }
+    catch(error) {
+        dispatch({type: FETCH_TSHIRTS_FAILED, payload: error})
+    }
 }
 
 export const fetchTshirtsFailed = (error) => {
@@ -175,39 +173,37 @@ export const checkAuthTimeout = (expirationTime) => {
     }
 }
 
-export const auth = (email, password, isSignup) => {
+export const auth = (email, password, isSignup) => async dispatch => {
     //Signup or Signin and we have 2 urls for them
-    return dispatch => {
-        dispatch({type: AUTH_START});
-        dispatch({type: AUTH_EMAIL, payload: email});
+    
+    dispatch({type: AUTH_START});
+    dispatch({type: AUTH_EMAIL, payload: email});
 
-        const authData = {
-            email: email,
-            password: password,
-            returnSecureToken: true
-        };
-        let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyAmdtvXRxnHUdCp1JeNHfrpdvFVY8Gotug';
-        if (!isSignup){
-            url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyAmdtvXRxnHUdCp1JeNHfrpdvFVY8Gotug';
-        }
-        
-        axios.post(url, authData)
-            .then(response => {
-                console.log(response);
-                const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
+    const authData = {
+        email: email,
+        password: password,
+        returnSecureToken: true
+    };
 
-                localStorage.token = response.data.idToken;
-                localStorage.expirationDate = expirationDate;
-                localStorage.userId = response.data.localId;
-                localStorage.email = response.data.email;
-                dispatch(authSuccess(response.data.idToken, response.data.localId));
-                dispatch(checkAuthTimeout(response.data.expiresIn));
-            })
-            .catch(error => {
-                console.log(error);
-                dispatch(authFailed(error.response.data.error));
-            })
+    let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyAmdtvXRxnHUdCp1JeNHfrpdvFVY8Gotug';
+    if (!isSignup){
+        url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyAmdtvXRxnHUdCp1JeNHfrpdvFVY8Gotug';
     }
+    
+    try {
+        const response = await axios.post(url, authData);
+        const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
+
+        localStorage.token = response.data.idToken;
+        localStorage.expirationDate = expirationDate;
+        localStorage.userId = response.data.localId;
+        localStorage.email = response.data.email;
+        dispatch(authSuccess(response.data.idToken, response.data.localId));
+        dispatch(checkAuthTimeout(response.data.expiresIn));
+    }
+    catch(error) {
+        dispatch(authFailed(error.response.data.error));
+    }       
 }
 
 export const authCheckState = () => {
@@ -236,15 +232,14 @@ export const fetchOrders = (token, userId) => async dispatch => {
     dispatch({type: FETCH_ORDERS_START});//!!!sets loading = true
 
     const queryParams = '?auth=' + token + '&orderBy="userId"&equalTo="' + userId+ '"';
-    const response = await tshirts.get('/orders.json' + queryParams)
-        .then(response => {
-            //console.log(response);
-            dispatch({type: FETCH_ORDERS, payload: response.data})
-        })
-        .catch(error => {
-            dispatch({type: FETCH_ORDERS_FAILED, payload: error})
-        });
 
+    try {
+        const response = await tshirts.get('/orders.json' + queryParams);
+        dispatch({type: FETCH_ORDERS, payload: response.data});
+    }
+    catch(error) {
+        dispatch({type: FETCH_ORDERS_FAILED, payload: error});
+    }
 }
 
 export const fetchOrdersFailed = (error) => {
