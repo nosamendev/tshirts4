@@ -109,7 +109,7 @@ class Cart extends React.Component {
                 cartArr = [];
             }
             else {
-                if (localStorage.cart != "[]") {
+                if (localStorage.cart.length !== 0) {
                     
                     cartArr = JSON.parse(localStorage.cart);
                     const len = cartArr.length;
